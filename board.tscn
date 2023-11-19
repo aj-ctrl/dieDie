@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://12wfh3bu1hyn"]
+
+[ext_resource type="Texture2D" uid="uid://ck7dlni41ayyi" path="res://dieSquare.png" id="1_kr2mf"]
+
+[node name="Board" type="Node2D"]
+modulate = Color(0.513726, 0.513726, 0.513726, 1)
+
+[node name="dieSlot1" type="Sprite2D" parent="."]
+position = Vector2(-40, -40)
+texture = ExtResource("1_kr2mf")
+
+[node name="RollSlot" type="Sprite2D" parent="."]
+position = Vector2(-120, 40)
+texture = ExtResource("1_kr2mf")
+
+[node name="dieSlot2" type="Sprite2D" parent="."]
+position = Vector2(-40, 0)
+texture = ExtResource("1_kr2mf")
+
+[node name="dieSlot3" type="Sprite2D" parent="."]
+position = Vector2(-40, 40)
+texture = ExtResource("1_kr2mf")
+
+[node name="dieSlot4" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("1_kr2mf")
+
+[node name="dieSlot5" type="Sprite2D" parent="."]
+texture = ExtResource("1_kr2mf")
+
+[node name="dieSlot6" type="Sprite2D" parent="."]
+position = Vector2(0, 40)
+texture = ExtResource("1_kr2mf")
+
+[node name="dieSlot7" type="Sprite2D" parent="."]
+position = Vector2(40, -40)
+texture = ExtResource("1_kr2mf")
+
+[node name="dieSlot8" type="Sprite2D" parent="."]
+position = Vector2(40, 0)
+texture = ExtResource("1_kr2mf")
+
+[node name="dieSlot9" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+texture = ExtResource("1_kr2mf")

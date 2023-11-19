@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr2omqakdsek7"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_rlmg5"]
+[ext_resource type="PackedScene" uid="uid://12wfh3bu1hyn" path="res://board.tscn" id="2_lipop"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_rlmg5")
+
+[node name="Player1" type="Node2D" parent="."]
+position = Vector2(171, 193)
+
+[node name="Board" parent="Player1" instance=ExtResource("2_lipop")]
+
+[node name="Player2" type="Node2D" parent="."]
+position = Vector2(250, 133)
+
+[node name="Board" parent="Player2" instance=ExtResource("2_lipop")]
+rotation = 3.14159

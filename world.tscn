@@ -1,0 +1,337 @@
+[gd_scene load_steps=8 format=3 uid="uid://dr2omqakdsek7"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_rlmg5"]
+[ext_resource type="Texture2D" uid="uid://crcx2wh8pfg6d" path="res://Plank.jpg" id="2_jwoje"]
+[ext_resource type="PackedScene" uid="uid://12wfh3bu1hyn" path="res://board.tscn" id="2_lipop"]
+[ext_resource type="Texture2D" uid="uid://dp5yxd3iawsbd" path="res://Log.jpg" id="2_tkbqm"]
+[ext_resource type="LabelSettings" uid="uid://dloj8hrrpjd50" path="res://Score.tres" id="3_5o7yl"]
+[ext_resource type="FontFile" uid="uid://cs0mlwmjvl2vt" path="res://consola.ttf" id="3_cussi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nea87"]
+line_spacing = 0.0
+font = ExtResource("3_cussi")
+font_size = 128
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 16
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 4)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_rlmg5")
+
+[node name="BG" type="TextureRect" parent="."]
+modulate = Color(0.5, 0.5, 0.5, 1)
+offset_left = -1600.0
+offset_top = -1220.0
+offset_right = 1600.0
+offset_bottom = 580.0
+texture = ExtResource("2_tkbqm")
+stretch_mode = 1
+
+[node name="BG2" type="TextureRect" parent="."]
+offset_left = -800.0
+offset_top = -1170.0
+offset_right = 800.0
+offset_bottom = 530.0
+texture = ExtResource("2_jwoje")
+stretch_mode = 1
+
+[node name="Player1" type="Node2D" parent="."]
+position = Vector2(0, 160)
+
+[node name="Board" parent="Player1" instance=ExtResource("2_lipop")]
+scale = Vector2(5, 5)
+
+[node name="Text" type="Control" parent="Player1"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1440.0
+offset_top = -1290.0
+offset_right = 1440.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Plr1Col1Scr" type="Label" parent="Player1/Text"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = 60.0
+offset_right = -110.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = ExtResource("3_5o7yl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plr1Col2Scr" type="Label" parent="Player1/Text"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 60.0
+offset_right = 90.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = ExtResource("3_5o7yl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plr1Col3Scr" type="Label" parent="Player1/Text"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 110.0
+offset_top = 60.0
+offset_right = 290.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = ExtResource("3_5o7yl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plr1Scr" type="Label" parent="Player1/Text"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 510.0
+offset_top = 60.0
+offset_right = 690.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = ExtResource("3_5o7yl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Control" parent="Player1"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -406.0
+offset_top = -406.0
+offset_right = 394.0
+offset_bottom = 394.0
+
+[node name="BtnLeft" type="Button" parent="Player1/Buttons"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 112.0
+offset_right = 300.0
+offset_bottom = 700.0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="BtnCenter" type="Button" parent="Player1/Buttons"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 112.0
+offset_right = 500.0
+offset_bottom = 700.0
+
+[node name="BtnRight" type="Button" parent="Player1/Buttons"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 112.0
+offset_right = 700.0
+offset_bottom = 700.0
+
+[node name="Player2" type="Node2D" parent="."]
+position = Vector2(0, -800)
+
+[node name="Board" parent="Player2" instance=ExtResource("2_lipop")]
+rotation = 3.14159
+scale = Vector2(5, 5)
+
+[node name="Text" type="Control" parent="Player2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1440.0
+offset_top = -330.0
+offset_right = 1440.0
+offset_bottom = 1290.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Plr2Col1Scr" type="Label" parent="Player2/Text"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -178.0
+offset_right = -110.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = ExtResource("3_5o7yl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plr2Col2Scr" type="Label" parent="Player2/Text"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -178.0
+offset_right = 90.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = ExtResource("3_5o7yl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plr2Col3Scr" type="Label" parent="Player2/Text"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 110.0
+offset_top = -178.0
+offset_right = 290.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = ExtResource("3_5o7yl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plr2Scr" type="Label" parent="Player2/Text"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 510.0
+offset_top = -178.0
+offset_right = 690.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "99"
+label_settings = ExtResource("3_5o7yl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Player2"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BtnLeft" type="Button" parent="Player2/Control"]
+visible = false
+layout_mode = 0
+offset_left = -294.0
+offset_top = -294.0
+offset_right = -106.0
+offset_bottom = 294.0
+
+[node name="BtnCenter" type="Button" parent="Player2/Control"]
+visible = false
+layout_mode = 0
+offset_left = -94.0
+offset_top = -294.0
+offset_right = 94.0
+offset_bottom = 294.0
+
+[node name="BtnRight" type="Button" parent="Player2/Control"]
+visible = false
+layout_mode = 0
+offset_left = 106.0
+offset_top = -294.0
+offset_right = 294.0
+offset_bottom = 294.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -320)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Text" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1600.0
+offset_top = -1220.0
+offset_right = 1600.0
+offset_bottom = 580.0
+mouse_filter = 2
+
+[node name="FinalScore" type="Panel" parent="Text"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1600.0
+offset_top = -120.0
+offset_right = 1600.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Text/FinalScore"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -770.0
+offset_top = -64.5
+offset_right = 770.0
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player X Wins! 99 : 99"
+label_settings = SubResource("LabelSettings_nea87")
+horizontal_alignment = 1
+vertical_alignment = 1
